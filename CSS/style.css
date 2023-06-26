@@ -1,0 +1,173 @@
+
+*{
+    margin:3px;
+    padding:0;
+    box-sizing:border-box;
+}
+:root{
+    --text-color:white;
+    --url: url(/images/bg-mobile.jpg);
+    --cor1:rgba(255, 255, 255, 0.1);
+    --cor2:rgba(255, 255, 255, 0.5);
+    --cor3:rgba(255, 255, 255, 0.2);
+    --switch-url:url(/images/moon-stars.svg);
+}
+
+.light{
+    --text-color:rgba(75, 75, 75);
+    --url: url(/images/bg-mobile-light.jpg);
+    --cor1: rgba(255, 255, 255, 0.1);
+    --cor2:rgba(214, 124, 239, 0.5);
+    --cor3:rgba(255, 255, 255, 0.2);
+    --switch-url:url(/images/sun.svg)
+
+    
+}
+
+body {
+    background-image: var(--url);
+    background-repeat: no-repeat;
+    background-position:top center;
+    background-size:cover;
+}
+
+body *{
+    color:var(--text-color);
+    font-family: 'Inter', sans-serif;
+}
+
+#conteiner {
+    width:100%;
+    max-width: 480px;
+    margin:56px auto 0px auto;
+    padding:0 24px;
+}
+
+#profile {
+    text-align:center;
+    padding:24px;
+    
+}
+#profile p{
+    font-weight: 500;
+    line-height: 24px;
+}
+
+#profile img {
+    width:112px;
+    
+
+}
+
+ul {
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:16px
+    
+}
+
+ul li a{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding:16px 24px;
+    background:var(--cor1);
+    border: 1px solid var(--cor2);
+    border-radius:8px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(4px);
+    text-decoration:none;
+    transition: all 0.7s;
+
+
+}
+ul li a:hover{
+    background: var(--cor2);
+    border: 1.5px solid var(--text-color);
+}
+
+#social-Links{
+    display:flex;
+    gap:32px;
+    padding: 24px;
+    font-size: 24px;
+    justify-content: center;
+
+
+}
+#social-Links a {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    padding:16px
+    
+}
+#social-Links a:hover {
+    background:var(--cor3);
+    padding:16px;
+    border-radius:40%;
+    
+}
+#switch{
+    position: relative;
+    width:77px;
+    margin:0 auto;
+}
+
+#switch button{
+    width:32px;
+    height:32px;
+    background:white var(--switch-url) no-repeat center;
+    border:0;
+    border-radius:50%;
+    position: absolute;
+    z-index: 1;
+    right:0;
+    transform:translateY(-20%);
+    animation:slide-out 0.4s forwards;
+    
+}
+#switch button:hover{
+    outline:9px solid var(--cor3)
+}
+
+#switch span{
+    display:block;
+    width:64px;
+    height:24px;
+    background:gray;
+    border:blur(4px);
+    border-radius: 9999px;
+}
+
+.light #switch button{
+    animation: slide-in 0.4s forwards;
+}
+@media (max-width: 700px){
+    :root{
+        --url:url(/images/bg-desktop.jpg)
+    }
+    .light{
+     --url: url(/images/bg-desktop-light.jpg)
+    }
+
+}
+
+
+@keyframes slide-in{
+    from {
+        left:0;   
+    }
+    to{
+        left:50%;   
+    }
+}
+@keyframes slide-out{
+    from{
+        left:50%;
+    }
+    to{
+        left:0
+    }
+}
