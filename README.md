@@ -8,5 +8,7 @@ Modo claro:
 
 Modo Escuro:
 
+![Captura de tela 2023-07-05 132037](https://github.com/Prattiz/Projeto-Portfolio-/assets/135062914/ea6db040-693e-4b2a-84a9-2b72b786147e)
+
 
 
